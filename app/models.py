@@ -12,4 +12,5 @@ class user_details(models.Model):
     mail_id = models.EmailField(max_length=60, blank=True, default='',verbose_name="mail_id" )
     image1 = models.ImageField(upload_to='images/', blank=True, default='',verbose_name="images" )
     image2 = models.ImageField(upload_to='images/', blank=True, default='',verbose_name="images" )
-    
+    def __str__(self):
+        return self.name 
