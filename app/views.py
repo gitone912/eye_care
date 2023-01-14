@@ -104,3 +104,5 @@ def reports(request,myid):
     else:
         prescription='please upload a clear image and try again'
     return render(request, "reports.html",{ 'data':data,'img':img,'pres':prescription})
+def home(request):
+    return redirect('/login')

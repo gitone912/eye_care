@@ -3,7 +3,7 @@
 {% if user.is_authenticated %}
     <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
     <h3>explore </h3>
-    <a href="{% url 'home' %}" class="nav-item nav-link">CameraVision</a>
+    <a href="{% url 'home' %}" class="nav-item nav-link">Home</a>
             
 {% else %}
     <p>Welcome, new user. Please log in.</p>
