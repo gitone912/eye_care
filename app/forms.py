@@ -8,7 +8,7 @@ class user_status(forms.ModelForm):
         super(user_status, self).__init__(*args, **kargs)
     class Meta:
         model = user_details
-        fields = '__all__'
+        fields = ['name','age','mail_id','gender','image1','image2']
         widgets = {
             'name': TextInput(attrs={
                 'class': "form-control",

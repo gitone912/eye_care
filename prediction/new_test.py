@@ -13,7 +13,7 @@ endpoint = "https://centralindia.api.cognitive.microsoft.com/"
 prediction_credentials = ApiKeyCredentials(in_headers={"Prediction-key": prediction_key})
 predictor = CustomVisionPredictionClient(endpoint, prediction_credentials)
 # Open an image and make a prediction
-with open(os.path.join(images_folder, "Eye-Health-and-Diabetes-1170x563.jpg"), "rb") as image_contents:
+with open(os.path.join(images_folder, "WhatsApp Image 2023-01-14 at 19.50.45.jpg"), "rb") as image_contents:
     results = predictor.classify_image(project_id, publish_iteration_name, image_contents.read())
 # Display the results
 for prediction in results.predictions:

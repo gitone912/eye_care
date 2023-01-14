@@ -4,8 +4,8 @@ import os
 # Get path to images folder
 # Create variables for your project
 def get_image(a):
-    publish_iteration_name = "Iteration1_imaginecup"
-    project_id = "e9aac1ab-a015-47ee-908b-be478112e6f4"
+    publish_iteration_name = "Iteration1_eyecare"
+    project_id = "ce776105-2db5-42fb-9379-090ca22c3873"
     # Create variables for your prediction resource
     prediction_key = "f0afaf5cbcf84ffe9c8e48eb3cbd9552"
     endpoint = "https://centralindia.api.cognitive.microsoft.com/"
@@ -19,4 +19,14 @@ def get_image(a):
     # for prediction in results.predictions:
     #     print(f"{prediction.tag_name}: {prediction.probability * 100 :.2f}%")
     print(f"result : {results.predictions[0].tag_name} {results.predictions[0].probability * 100 :.2f}%")
-    return 1 if results.predictions[0].tag_name == "garbage" else 0
+    if results.predictions[0].tag_name == "normal":
+        return 'normal'
+    elif results.predictions[0].tag_name == "diabetic_retinopathy":
+        return 'diabetic_retinopathy'
+    elif results.predictions[0].tag_name == "glaucoma":
+        return 'glaucoma'
+    elif results.predictions[0].tag_name == "cataract":
+        return 'cataract'
+    else:
+        return 'upload_clear_image'
+    
